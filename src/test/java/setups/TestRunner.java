@@ -14,7 +14,15 @@ import org.testng.annotations.Test;
     tags = "@test",
     features = "src/test/resources/features",
     glue = "steps",
-    publish = true
+    publish = true,
+    plugin = {
+            "pretty",
+            "html:reports/tests/cucumber/html",
+            "timeline:reports/tests/cucumber/timeline",
+            "testng:reports/tests/cucumber/testng/cucumber.xml",
+            "json:reports/tests/cucumber/json/cucumber.json"
+    }
+
 )
 public class TestRunner extends BaseTest {
     private TestNGCucumberRunner testNGCucumberRunner;

@@ -1,6 +1,6 @@
 @file:JvmName("_FinderRawMethods")
 @file:JvmMultifileClass
-package util.appium_flutter_driver.finder
+package appium_flutter_driver.finder
 
 fun ancestor(of: FlutterElement, matching: FlutterElement, matchRoot: Boolean = false): FlutterElement {
   val m = mutableMapOf(

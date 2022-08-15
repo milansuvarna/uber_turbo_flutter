@@ -1,0 +1,24 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "username": "iqbal_rKBCES",
+  "access_key": "1C27gpyRpeYHfQKox71X",
+
+  "capabilities": {
+    "project": "V3-automation-E2E-Project",
+    "build": "browserstack-build-1",
+    "name": "flutter_test",
+    "browserstack.debug": true,
+    "app": "bs://8c0bb5f8f1b4437f6b470d8873252071d706ff08",
+    "automationName" : "flutter",
+    "autoGrantPermissions" : true,
+    "skipUnlock" : true,
+    "noReset" : false
+  },
+
+  "environments": [
+    { 
+      "device": "Google Pixel 3",
+      "os_version": "9.0"
+    }
+  ]
+}

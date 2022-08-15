@@ -1,21 +1,23 @@
-package util.appium_flutter_driver
+package appium_flutter_driver
 
 import java.util.regex.Pattern
+import java.io.File
 
+import io.appium.java_client.MobileElement
 import org.openqa.selenium.remote.RemoteWebDriver
 import org.openqa.selenium.remote.FileDetector
-import util.appium_flutter_driver.finder.FlutterElement
-import util.appium_flutter_driver.finder.ancestor as _ancestor
-import util.appium_flutter_driver.finder.bySemanticsLabel as _bySemanticsLabel
-import util.appium_flutter_driver.finder.byTooltip as _byTooltip
-import util.appium_flutter_driver.finder.byType as _byType
-import util.appium_flutter_driver.finder.byValueKey as _byValueKey
-import util.appium_flutter_driver.finder.descendant as _descendant
-import util.appium_flutter_driver.finder.pageBack as _pageBack
-import util.appium_flutter_driver.finder.text as _text
+import appium_flutter_driver.finder.FlutterElement
+import appium_flutter_driver.finder.ancestor as _ancestor
+import appium_flutter_driver.finder.bySemanticsLabel as _bySemanticsLabel
+import appium_flutter_driver.finder.byTooltip as _byTooltip
+import appium_flutter_driver.finder.byType as _byType
+import appium_flutter_driver.finder.byValueKey as _byValueKey
+import appium_flutter_driver.finder.descendant as _descendant
+import appium_flutter_driver.finder.pageBack as _pageBack
+import appium_flutter_driver.finder.text as _text
 
 
-class FlutterFinder(driver: RemoteWebDriver) {
+public class FlutterFinder(driver: RemoteWebDriver) {
   private val driver = driver
   private val fileDetector = FileDetector({ _ -> null })
   fun ancestor(of: FlutterElement, matching: FlutterElement, matchRoot: Boolean = false): FlutterElement {
