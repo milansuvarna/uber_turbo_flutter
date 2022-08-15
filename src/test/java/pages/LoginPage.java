@@ -35,7 +35,6 @@ public class LoginPage extends BasePage {
     @SneakyThrows
     public void clickContinueButton() {
         clickByText(continue_button);
-        Thread.sleep(10000);
     }
 }
 
