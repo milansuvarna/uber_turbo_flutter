@@ -240,7 +240,7 @@
 
     <profiles>
         <profile>
-            <id>first</id>
+            <id>browserstack</id>
             <build>
                 <plugins>
                     <plugin>
@@ -248,7 +248,7 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
                             <suiteXmlFiles>
-                                <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                                <suiteXmlFile>src/test/resources/browserstack.testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>

@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 
 @CucumberOptions(
     monochrome = true,
-    tags = "@test",
     features = "src/test/resources/features",
     glue = "steps",
     publish = true,
@@ -22,7 +21,6 @@ import org.testng.annotations.Test;
             "testng:reports/tests/cucumber/testng/cucumber.xml",
             "json:reports/tests/cucumber/json/cucumber.json"
     }
-
 )
 public class TestRunner extends BaseTest {
     private TestNGCucumberRunner testNGCucumberRunner;

@@ -1,0 +1,25 @@
+{
+  "server": null,
+  "username": null,
+  "access_key": null,
+
+  "capabilities": {
+    "project": "V3-automation-E2E-Project",
+    "build": "browserstack-build-1",
+    "name": "flutter_test",
+    "browserstack.debug": true,
+    "browserstack.local": true,
+    "app": "/Users/iqbaldarmawan/Documents/Work/V3-automation-E2E/src/test/resources/app/test.apk",
+    "automationName" : "flutter",
+    "autoGrantPermissions" : true,
+    "skipUnlock" : true,
+    "noReset" : false
+  },
+
+  "environments": [
+    {
+      "device": "emulator-5554",
+      "os_version": "11"
+    }
+  ]
+}
