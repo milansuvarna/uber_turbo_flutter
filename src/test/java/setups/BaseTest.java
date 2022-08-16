@@ -2,21 +2,19 @@ package setups;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
-import util.Capabilities;
+import org.testng.annotations.*;
 import util.ThreadLocalDriver;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class BaseTest {
     public String jsonConfig;
@@ -26,9 +24,9 @@ public class BaseTest {
     @Parameters(value = {"server"})
     public void setUp(String type) throws Exception {
         if (type.equals("browserstack")) {
-            jsonConfig = "src/test/resources/browserstack.conf.json";
+            jsonConfig = "src/test/resources/config/browserstack.conf.json";
         } else if (type.equals("local")) {
-            jsonConfig = "src/test/resources/local.conf.json";
+            jsonConfig = "src/test/resources/config/local.conf.json";
         }
         JSONParser parser = new JSONParser();
         JSONObject config = (JSONObject) parser.parse(new FileReader(jsonConfig));
@@ -71,5 +69,14 @@ public class BaseTest {
     @AfterMethod(alwaysRun = true)
     public synchronized void teardown() {
         ThreadLocalDriver.getTLDriver().quit();
+    }
+
+    @After
+    public void quit(Scenario scenario){
+        /* This is for attaching the screenshot in Cucumber report */
+        if (scenario.isFailed()) {
+            byte[] screenshot = ThreadLocalDriver.getTLDriver().getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", scenario.getName());
+        }
     }
 }

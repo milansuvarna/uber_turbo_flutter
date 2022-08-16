@@ -16,9 +16,8 @@ import org.testng.annotations.Test;
     publish = true,
     plugin = {
             "pretty",
-            "html:reports/tests/cucumber/html",
-            "timeline:reports/tests/cucumber/timeline",
-            "testng:reports/tests/cucumber/testng/cucumber.xml",
+            "summary",
+            "me.jvt.cucumber.report.PrettyReports:reports/tests/cucumber/",
             "json:reports/tests/cucumber/json/cucumber.json"
     }
 )

@@ -13,7 +13,9 @@
     "automationName" : "flutter",
     "autoGrantPermissions" : true,
     "skipUnlock" : true,
-    "noReset" : false
+    "noReset" : false,
+    "reportDirectory" : "reports",
+    "reportFormat" : "html"
   },
 
   "environments": [
