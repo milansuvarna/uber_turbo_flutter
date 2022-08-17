@@ -49,9 +49,17 @@ public class BaseTest {
             }
         }
 
-        String username = (String) config.get("username");
-        String accessKey = (String) config.get("access_key");
         String server = (String) config.get("server");
+        String username = System.getenv("BROWSERSTACK_USERNAME");
+        if(username == null) {
+            username = (String) config.get("username");
+        }
+
+        String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+        if(accessKey == null) {
+            accessKey = (String) config.get("access_key");
+        }
+
         String app = System.getenv("BROWSERSTACK_APP_ID");
         if (app != null && !app.isEmpty()) {
             capabilities.setCapability("app", app);
