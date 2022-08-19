@@ -1,5 +1,8 @@
-@test
+@login
 Feature: Login scenarios
 
-  Scenario: Login with valid credential
-    When user login with valid credential
+  Scenario: Borrower login with valid credentials.
+    Given Borrower on Welcome screen
+#    When Borrower login with valid credential
+#    Then Borrower successfully login
+

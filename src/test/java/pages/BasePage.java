@@ -1,10 +1,10 @@
 package pages;
 
+import appium_flutter_driver.FlutterFinder;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import java.util.Set;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import util.appium_flutter_driver.FlutterFinder;
 
 public class BasePage {
     public static AndroidDriver<MobileElement> driver;

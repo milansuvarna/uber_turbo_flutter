@@ -11,10 +11,15 @@ import org.testng.annotations.Test;
 
 @CucumberOptions(
     monochrome = true,
-    tags = "@test",
     features = "src/test/resources/features",
     glue = "steps",
-    publish = true
+    publish = true,
+    plugin = {
+            "pretty",
+            "summary",
+            "me.jvt.cucumber.report.PrettyReports:reports/tests/cucumber/",
+            "json:reports/tests/cucumber/json/cucumber.json"
+    }
 )
 public class TestRunner extends BaseTest {
     private TestNGCucumberRunner testNGCucumberRunner;

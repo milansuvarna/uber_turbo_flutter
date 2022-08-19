@@ -1,8 +1,8 @@
-package util.appium_flutter_driver.finder
+package appium_flutter_driver.finder
 
 import io.appium.java_client.MobileElement
 
-class FlutterElement : MobileElement {
+public class FlutterElement : MobileElement {
   private var _rawMap: Map<String, *>
   constructor(m: Map<String, *>) {
     _rawMap = m
