@@ -11,7 +11,7 @@ class UcsPage
   def initialize_elements
     @sydney_timezone = TZInfo::Timezone.get('Australia/Sydney')
     @current_date_in_sydney = Time.now.getlocal(@sydney_timezone.current_period.utc_total_offset).strftime('%d').to_i
-    @time_out = 5000
+    @time_out = 15000
     @time_out_in_second = @time_out/1000
     @time_out_set_frame_sync = 5000
 
