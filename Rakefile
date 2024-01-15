@@ -1,5 +1,4 @@
 require 'fileutils'
-require 'allure-rspec'
 
 task :rspec do
   sh 'rspec spec --format AllureRspecFormatter'

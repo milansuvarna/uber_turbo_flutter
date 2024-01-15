@@ -1,5 +1,3 @@
-require 'rspec/expectations'
-
 class UcsPage
   include ::Appium::Flutter::Finder
 
@@ -44,7 +42,7 @@ class UcsPage
     @due_today_text = element_with_text('Due today')
     @settings_tab = element_with_text('Settings')
     @contact_details_menu = element_with_text('Contact details')
-    @email_text = element_with_text('fefiwells@gmail.com')
+    @email_text = element_with_text('7436@example.com')
     @address_button = element_with_text('Sydney NSW')
     @find_car_near_you_text = element_with_text('Find the right car near you')
     @address_on_car_details_text = element_with_text('Sydney Central Business District, NSW')
@@ -63,7 +61,6 @@ class UcsPage
   end
 
   def click_element(element)
-    @driver.execute_script('flutter:setFrameSync', true , @time_out_set_frame_sync)
     begin
       @driver.execute_script('flutter:waitFor', element, @time_out)
       element.click
@@ -71,11 +68,9 @@ class UcsPage
       puts "Element did not appear within #{@time_out_in_second} seconds."
       raise e
     end
-    @driver.execute_script('flutter:setFrameSync', false, @time_out_set_frame_sync)
   end
 
   def enter_text(element,text)
-    @driver.execute_script('flutter:setFrameSync', true , @time_out_set_frame_sync)
     begin
       @driver.execute_script('flutter:waitFor', element, @time_out)
       element.send_keys(text)
@@ -83,11 +78,9 @@ class UcsPage
       puts "Element did not appear within #{@time_out_in_second} seconds."
       raise e
     end
-    @driver.execute_script('flutter:setFrameSync', false, @time_out_set_frame_sync)
   end
 
   def value_from_element(element)
-    @driver.execute_script('flutter:setFrameSync', true , @time_out_set_frame_sync)
     begin
       @driver.execute_script('flutter:waitFor', element, @time_out)
       element.text
@@ -95,7 +88,6 @@ class UcsPage
       puts "Element did not appear within #{@time_out_in_second} seconds."
       raise e
     end
-    @driver.execute_script('flutter:setFrameSync', false, @time_out_set_frame_sync)
   end
 
   def login_with_credentials(credentials)
